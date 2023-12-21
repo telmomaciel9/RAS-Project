@@ -1,2 +1,26 @@
+<p style="background-color: lightgray;">
+    <mat-toolbar style="height: 64px;">
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="example-spacer"></span>
+      <span>Probum</span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon custom-button" aria-label="Example icon-button with share icon">
+        Editar
+      </button>
+    </mat-toolbar>
+</p>
 
-<router-outlet></router-outlet>
+<body >
+    <div>
+        <router-outlet></router-outlet>
+        <!-- Other content goes here -->
+    </div>
+    <footer style="background-color: lightgray;">
+        <p style="background-color:white; display: flex; justify-content: center; align-items: center;">
+        Probum &#64;2023
+        </p>
+    </footer>
+</body>
+

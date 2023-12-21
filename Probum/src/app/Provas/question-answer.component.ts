@@ -12,7 +12,7 @@ import { Questao } from '../Modules/questao.module';
         </ul>
       </div>
       <div *ngIf="questaoAtual.tipo === 'respostaAberta'">
-        <input type="text" placeholder="Sua resposta">
+        <input type="text" placeholder="Sua resposta" />
       </div>
     </div>
   `,
