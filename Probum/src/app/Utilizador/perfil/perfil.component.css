@@ -1,0 +1,16 @@
+.content {
+  width: 90%; /* Largura do conteúdo principal */
+  margin: 0 auto; /* Centraliza o conteúdo */
+  background-color: #fff; /* Cor do fundo do conteúdo principal */
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra para destacar o conteúdo */
+  z-index: 1; /* Garante que o conteúdo principal esteja na frente das bordas laterais */
+  height: 100vh; /* Altura total da janela */
+}
+h1 {
+  text-align: center;
+}
+p {
+  text-align: center;
+  line-height: 1.6;
+}
