@@ -1,0 +1,25 @@
+<div class="content">
+    <br>
+    <h1>Nome da pessoa</h1>
+  
+    <img src="assets/profilepic.webp" width="200" height="200">
+  
+  
+    <h1>Perfil de utilizador</h1>
+    <h2>Informações Pessoais</h2>
+
+
+    <form action="/perfil"> <!-- method="post" para processar os dados -->
+        <label for="nome"><strong>Nome:</strong></label>
+        <input matInput style="padding-top: 8px; padding-bottom: 8px;" type="text" id="nome" name="nome" value="João da Silva" readonly><br><br>
+      
+        <label for="email"><strong>Email:</strong></label>
+        <input matInput style="padding-top: 8px; padding-bottom: 8px;" type="email" id="email" name="email" value="exemplo@email.com" required><br><br>
+      
+        <label for="senha"><strong>Nova Senha:</strong></label>
+        <input matInput style="padding-top: 8px; padding-bottom: 8px;" type="password" id="senha" name="senha" required><br><br>
+      
+        <input type="submit" value="Salvar" class="botao-link">
+    </form>
+
+  </div>
