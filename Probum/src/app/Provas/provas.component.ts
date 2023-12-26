@@ -5,9 +5,6 @@ import { Questao } from '../Modules/questao.module';
   selector: 'app-provas', // Seletor usado para referenciar esse componente em outros arquivos HTML
   template: `
     <h2>Lista de Questões</h2>
-    <div *ngFor="let questao of questoes">
-      <app-question-answer [questaoAtual]="questao"></app-question-answer>
-    </div>
   `,
   //templateUrl: './provas.component.html', // Caminho para o arquivo HTML associado a este componente
 })
