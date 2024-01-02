@@ -30,7 +30,7 @@ def student_required(view_func):
 
     return is_student
 
-# Custom decorator to check if the user has the "admin" role
+# Custom decorator to check if the user has the "docente" role
 def teacher_required(view_func):
     def is_teacher(*args, **kwargs):
         token = request.headers.get('Authorization')
@@ -56,7 +56,7 @@ def teacher_required(view_func):
 
     return is_teacher
 
-# Custom decorator to check if the user has the "docente" role
+# Custom decorator to check if the user has the "admin" role
 def admin_required(view_func):
     def is_admin(*args, **kwargs):
         token = request.headers.get('Authorization')

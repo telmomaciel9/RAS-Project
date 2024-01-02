@@ -11,7 +11,7 @@ import jwt
 
 logging.basicConfig(level=logging.INFO)
 
-# Route for changing password (no authentication required)
+# Route for changing password
 @app.route('/change_password', endpoint='change_password', methods=['POST'])
 @decorators.login_required
 def change_password():
