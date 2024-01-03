@@ -26,6 +26,7 @@ migrate = Migrate(app, db)
 class Prova(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     nome = db.Column(db.String(100), nullable=False)
+    uc = db.Column(db.String(100), nullable=False)
     alunos = db.relationship('AlunoProva', backref='prova', lazy=True)
     versoes = db.relationship('VersaoProva', backref='prova', lazy=True)
     tempo_admissao = db.Column(db.Integer, nullable=False)
@@ -84,6 +85,7 @@ def getAllProvas():
         provas_list.append({
             'id': prova.id,
             'nome': prova.nome,
+            'uc' : prova.uc,
             'tempo_admissao': prova.tempo_admissao,
             'duracao': prova.duracao,
             'criador_id': prova.criador_id,
@@ -105,6 +107,7 @@ def pedidoListaProvas(criador_id):
         provas_list.append({
             'id': prova.id,
             'nome': prova.nome,
+            'uc': prova.uc,
             'tempo_admissao': prova.tempo_admissao,
             'duracao': prova.duracao,
         })
@@ -124,6 +127,7 @@ def pedidoDetalhesProva(criador_id,prova_id):
     prova_data = {
         'id': prova.id,
         'nome': prova.nome,
+        'uc': prova.uc,
         'tempo_admissao': prova.tempo_admissao,
         'duracao': prova.duracao,
         'criador_id': prova.criador_id,
@@ -206,6 +210,7 @@ def criar_prova():
 
     nova_prova = Prova(
         nome=data['nome'],
+        uc=data['uc'],
         tempo_admissao=data['tempo_admissao'],
         duracao=data['duracao'],
         criador_id=data['criador_id']
@@ -350,6 +355,7 @@ def editar_detalhes_prova(criador_id):
         return jsonify({'message': 'Prova não encontrada'}), 404
 
     prova.nome = data['nome']
+    prova.uc = data['uc']
     prova.tempo_admissao = data['tempo_admissao']
     prova.duracao = data['duracao']
 
@@ -469,6 +475,7 @@ def obterProvasAtuais(aluno_id):
         json.append({
             'prova_id': prova.id,
             'nome_prova': prova.nome,
+            'uc': prova.uc,
             'duracao': prova.duracao,
             'admissao': prova.tempo_admissao,
             'versao_id': versao.id,
@@ -495,6 +502,7 @@ def detalhesProva(prova_id,versao_id):
 
     json = {
         'nome': prova.nome,
+        'uc': prova.uc,
         'data': versao.data.strftime('%Y-%m-%d %H:%M:%S'),
         'duracao': prova.duracao,
         'num_inscritos': num_incritos
@@ -695,6 +703,7 @@ def listaProvasCorrigir(criador_id):
         json.append({
             'prova_id': prova.id,
             'nome_prova': prova.nome,
+            'uc': prova.uc,
         })
 
     return jsonify({'provas_atuais': json}), 200
@@ -767,7 +776,8 @@ def listaProvasCorrigidas(criador_id):
     for prova in provas:
         json.append({
             'prova_id': prova.id,
-            'nome_prova': prova.nome
+            'nome_prova': prova.nome,
+            'uc': prova.uc
         })
 
     return jsonify({'provas_atuais': json}), 200
@@ -830,6 +840,7 @@ def listaProvasPublicadas(aluno_id):
         json.append({
             'prova_id': prova.id,
             'nome_prova': prova.nome,
+            'uc': prova.uc,
             'versao_numero': versao.numero,
             'versao_id': versao.id,
             'data_versao': versao.data.strftime('%Y-%m-%d %H:%M:%S'),
