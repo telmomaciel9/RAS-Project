@@ -23,7 +23,7 @@ def change_password():
 
         # Retrieve the user's current hashed password from the database
         cur = mysql.connection.cursor()
-        cur.execute("SELECT user_id, role, password FROM users WHERE username = %s", (username,))
+        cur.execute("SELECT user_id, role, password FROM user WHERE username = %s", (username,))
         user = cur.fetchone()
 
         print(f'Username: {username}')
@@ -40,7 +40,7 @@ def change_password():
             hashed_password = bcrypt.hashpw(new_password, bcrypt.gensalt())
 
             # Update the password in the database
-            cur.execute("UPDATE users SET password = %s WHERE username = %s", (hashed_password, username))
+            cur.execute("UPDATE user SET password = %s WHERE username = %s", (hashed_password, username))
             mysql.connection.commit()
             cur.close()
 
@@ -75,7 +75,7 @@ def register():
 
         # Check if the username or email already exists
         cur = mysql.connection.cursor()
-        cur.execute("SELECT * FROM users WHERE username = %s OR email = %s", (username, email))
+        cur.execute("SELECT * FROM user WHERE username = %s OR email = %s", (username, email))
         existing_user = cur.fetchone()
         
         # Validate the email format using a regular expression
@@ -92,7 +92,7 @@ def register():
         hashed_password = bcrypt.hashpw(password, bcrypt.gensalt())
 
         # Create a cursor and execute the query
-        cur.execute("INSERT INTO users (username, password, email, role) VALUES (%s, %s, %s, %s)", (username, hashed_password, email, role))
+        cur.execute("INSERT INTO user (username, password, email, role) VALUES (%s, %s, %s, %s)", (username, hashed_password, email, role))
         mysql.connection.commit()
         cur.close()
 
@@ -115,7 +115,7 @@ def registerTeacher():
 
         # Check if the username or email already exists
         cur = mysql.connection.cursor()
-        cur.execute("SELECT * FROM users WHERE username = %s OR email = %s", (username, email))
+        cur.execute("SELECT * FROM user WHERE username = %s OR email = %s", (username, email))
         existing_user = cur.fetchone()
 
         # Validate the email format using a regular expression
@@ -132,7 +132,7 @@ def registerTeacher():
         hashed_password = bcrypt.hashpw(password, bcrypt.gensalt())
 
         # Create a cursor and execute the query
-        cur.execute("INSERT INTO users (username, password, email, role) VALUES (%s, %s, %s, %s)", (username, hashed_password, email, role))
+        cur.execute("INSERT INTO user (username, password, email, role) VALUES (%s, %s, %s, %s)", (username, hashed_password, email, role))
         mysql.connection.commit()
         cur.close()
 
@@ -152,7 +152,7 @@ def login():
 
         # Create a cursor and execute the query
         cur = mysql.connection.cursor()
-        cur.execute("SELECT * FROM users WHERE username = %s", (username,))
+        cur.execute("SELECT * FROM user WHERE username = %s", (username,))
         user = cur.fetchone()
         cur.close()
 
@@ -181,7 +181,7 @@ def get_docentes():
     try:
         # Create a cursor and execute the query
         cur = mysql.connection.cursor()
-        cur.execute("SELECT user_id, username, email FROM users WHERE role = 'docente'")
+        cur.execute("SELECT user_id, username, email FROM user WHERE role = 'docente'")
         docentes = cur.fetchall()
         cur.close()
 

@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { ProvasComponent } from './Provas/provas.component';
+import { ProvaComponent } from './criarprova/criarprova.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { PerfilComponent } from './Utilizador/perfil/perfil.component';
@@ -10,7 +10,7 @@ import { ConsultarProvaComponent } from './Provas/consultar-prova/consultar-prov
 
 export const routes: Routes = [
   { path: '', component: HomepageComponent },
-  { path: 'provas', component: ProvasComponent },
+  { path: 'criarprova', component: ProvaComponent },
   { path: 'home', component: InicioComponent },
   { path: 'perfil', component: PerfilComponent },
   { path: 'editar', component: EditarPerfilComponent },

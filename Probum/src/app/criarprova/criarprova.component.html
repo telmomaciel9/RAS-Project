@@ -1,0 +1,12 @@
+<div>
+    <h2>Criação de Prova</h2>
+    <div>
+      <label for="nomeProva">Nome da Prova:</label>
+      <select (change)="onSelectProva($event)">
+        <option *ngFor="let prova of unidadesCurriculares" [value]="prova">{{ prova }}</option>
+      </select>
+    </div>
+  
+    <button (click)="criarProva()">Criar Prova</button>
+  </div>
+  
