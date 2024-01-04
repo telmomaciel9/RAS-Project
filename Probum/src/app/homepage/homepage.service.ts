@@ -5,24 +5,32 @@ import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 import { HttpClientModule } from '@angular/common/http';
 import { HomepageComponent } from './homepage.component';
+import { Router } from '@angular/router';
+import { tap} from 'rxjs/operators';
 
 @Injectable()
 export class AuthService {
 
-  private baseUrl = 'http://localhost:5000'; // Replace with your Flask API URL
-	constructor(private http: HttpClient) {
+  private baseUrl = 'http://127.0.0.1:5000'; // Replace with your Flask API URL
+	constructor(private http: HttpClient, private router: Router) {
 		this.headers = new HttpHeaders({ 'Content-Type': 'application/json', 'Accept': "*/*" });
 	};
 
 	headers: HttpHeaders;
 
-  login(username: string, password: string){
+  login(username: string, password: string) {
     const body = { username, password };
     return this.http.post<any>(`${this.baseUrl}/login`, body).pipe(
       catchError((error) => {
-        // Handle error, log, or throw it further
         console.error('Error occurred during login:', error);
-        return throwError(error); // Rethrow the error for the component to handle
+        return throwError(error);
+      }),
+      tap((response: any) => {
+        console.log('Login bem-sucedido', response);
+        localStorage.setItem('token', response.token);
+        this.router.navigate(['/home']).then(() => {
+          window.location.reload(); // Refresh após a navegação
+        });
       })
     );
   }

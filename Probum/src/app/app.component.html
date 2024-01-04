@@ -1,11 +1,11 @@
 <p style="background-color: lightgray;">
-    <mat-toolbar style="height: 64px;">
+    <mat-toolbar style="height: 64px;" *ngIf="role === 'docente'">
       <button mat-icon-button [matMenuTriggerFor]="menu" class="example-icon" aria-label="Example icon-button with a menu">
         <mat-icon>menu</mat-icon>
       </button>
       <mat-menu #menu="matMenu">
 
-        <button mat-menu-item>
+        <button mat-menu-item (click)="redirecionaPerfil()">
           <mat-icon>face</mat-icon>
           <span>Perfil</span>
         </button>
@@ -31,8 +31,8 @@
       <span>Probum-Docente</span>
       <span class="example-spacer"></span>
       
-      <button mat-icon-button class="example-icon custom-button" aria-label="Example icon-button with share icon">
-        <mat-icon>mark_email_unread</mat-icon> Editar
+      <button mat-icon-button class="example-icon custom-button" aria-label="Example icon-button with share icon" (click)="logout()">
+        <mat-icon>campaign</mat-icon> Logout
       </button>
 
       
@@ -41,13 +41,13 @@
 
 
 <p style="background-color: lightgray;">
-  <mat-toolbar style="height: 64px;">
+  <mat-toolbar style="height: 64px;" *ngIf="role === 'estudante'">
     <button mat-icon-button [matMenuTriggerFor]="menu_aluno" class="example-icon" aria-label="Example icon-button with a menu">
       <mat-icon>menu</mat-icon>
     </button>
     <mat-menu #menu_aluno="matMenu">
 
-      <button mat-menu-item>
+      <button mat-menu-item (click)="redirecionaPerfil()">
         <mat-icon>face</mat-icon>
         <span>Perfil</span>
       </button>
@@ -72,21 +72,21 @@
     <span class="example-spacer"></span>
     <span>Probum-Aluno</span>
     <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon custom-button" aria-label="Example icon-button with share icon">
-      <mat-icon>notifications</mat-icon> Editar
+    <button mat-icon-button class="example-icon custom-button" aria-label="Example icon-button with share icon" (click)="logout()">
+      <mat-icon>campaign</mat-icon> Logout
     </button>
   </mat-toolbar>
 </p>
 
 
 <p style="background-color: lightgray;">
-  <mat-toolbar style="height: 64px;">
+  <mat-toolbar style="height: 64px;" *ngIf="role === 'admin'">
     <button mat-icon-button [matMenuTriggerFor]="menu_tecnico" class="example-icon" aria-label="Example icon-button with a menu">
       <mat-icon>menu</mat-icon>
     </button>
     <mat-menu #menu_tecnico="matMenu">
 
-      <button mat-menu-item>
+      <button mat-menu-item (click)="redirecionaPerfil()">
         <mat-icon>face</mat-icon>
         <span>Perfil</span>
       </button>
@@ -121,8 +121,8 @@
     <span class="example-spacer"></span>
     <span>Probum-Tecnico</span>
     <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon custom-button" aria-label="Example icon-button with share icon">
-      <mat-icon>campaign</mat-icon> Editar
+    <button mat-icon-button class="example-icon custom-button" aria-label="Example icon-button with share icon" (click)="logout()">
+      <mat-icon>campaign</mat-icon> Logout
     </button>
   </mat-toolbar>
 </p>

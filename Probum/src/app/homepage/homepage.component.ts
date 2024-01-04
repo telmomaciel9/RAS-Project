@@ -9,6 +9,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import { AuthService } from '../homepage/homepage.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-homepage',
@@ -21,20 +22,11 @@ import { FormsModule } from '@angular/forms';
 export class HomepageComponent {
   hide = true
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   login(credentials: { username: string, password: string }): void {
-    this.authService.login(credentials.username, credentials.password).subscribe(
-      (response) => {
-        // Trata a resposta de login bem-sucedida aqui
-        console.log('Login bem-sucedido', response);
-        // Você pode querer armazenar o token no local storage aqui
-      },
-      (error) => {
-        // Trata o erro de login aqui
-        console.error('Erro de login', error);
-      }
-    );
+    this.authService.login(credentials.username, credentials.password).subscribe(() => {
+    });
   }
 }
 

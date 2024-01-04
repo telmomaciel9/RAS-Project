@@ -4,11 +4,13 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { TimepickerModule } from 'ngx-bootstrap/timepicker';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
 import { ProvaComponent } from './criarprova/criarprova.component'; 
 import { HomepageComponent } from './homepage/homepage.component';
+import {ChangePasswordDialogComponent} from './change-password-dialog/change-password-dialog.component';
 import { routes } from './app.routes';
 
 
@@ -17,6 +19,7 @@ import { routes } from './app.routes';
     AppComponent,
     ProvaComponent,
     HomepageComponent,
+    ChangePasswordDialogComponent,
 
     // ... outros componentes
   ],
@@ -26,6 +29,7 @@ import { routes } from './app.routes';
     FormsModule,
     BsDatepickerModule.forRoot(),
     TimepickerModule.forRoot(),
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
