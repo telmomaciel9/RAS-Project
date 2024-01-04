@@ -23,3 +23,20 @@ p {
     margin: 0;
     padding: 0;
 }
+
+.example-icon{
+  border:0;
+  display:flex;
+  margin-right:20px;
+  background-color: lightgray;
+  transition: background-color 1s;
+}
+
+.example-icon:hover{
+  background-color: grey;
+}
+
+.example-icon:active{
+  background-color: darkslategray;
+  transition: none;
+}

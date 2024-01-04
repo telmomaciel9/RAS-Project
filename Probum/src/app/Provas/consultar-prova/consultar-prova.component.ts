@@ -10,5 +10,5 @@ import { Component } from '@angular/core';
 export class ConsultarProvaComponent {
 
   // falta isto
-
+  prova = null
 }

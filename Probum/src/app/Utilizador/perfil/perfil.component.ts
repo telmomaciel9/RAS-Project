@@ -3,11 +3,13 @@ import { UserService } from './perfil.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialog } from '@angular/material/dialog';
 import { ChangePasswordDialogComponent } from '../../change-password-dialog/change-password-dialog.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCardModule} from '@angular/material/card';
 
 @Component({
   selector: 'app-perfil',
   standalone: true,
-  imports: [HttpClientModule],
+  imports: [HttpClientModule,MatGridListModule,MatCardModule],
   templateUrl: './perfil.component.html',
   styleUrl: './perfil.component.css',
   providers: [UserService],
@@ -41,11 +43,10 @@ export class PerfilComponent {
   openChangePasswordDialog(): void {
     const dialogRef = this.dialog.open(ChangePasswordDialogComponent, {
       width: '400px',
-      disableClose: true // Impede fechar o diálogo clicando fora dele
+      disableClose: false 
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      // Aqui você pode fazer algo com o resultado após fechar o diálogo, se necessário
       console.log('Diálogo fechado', result);
     });
   }

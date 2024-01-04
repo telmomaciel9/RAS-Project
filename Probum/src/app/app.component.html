@@ -1,5 +1,5 @@
-<p style="background-color: lightgray;">
-    <mat-toolbar style="height: 64px;" *ngIf="role === 'docente'">
+<p>
+    <mat-toolbar style="height: 64px; background-color: lightgray;" *ngIf="role === 'docente'">
       <button mat-icon-button [matMenuTriggerFor]="menu" class="example-icon" aria-label="Example icon-button with a menu">
         <mat-icon>menu</mat-icon>
       </button>
@@ -40,8 +40,8 @@
 </p>
 
 
-<p style="background-color: lightgray;">
-  <mat-toolbar style="height: 64px;" *ngIf="role === 'estudante'">
+<p>
+  <mat-toolbar style="height: 64px; background-color: lightgray;" *ngIf="role === 'estudante'">
     <button mat-icon-button [matMenuTriggerFor]="menu_aluno" class="example-icon" aria-label="Example icon-button with a menu">
       <mat-icon>menu</mat-icon>
     </button>
@@ -79,8 +79,8 @@
 </p>
 
 
-<p style="background-color: lightgray;">
-  <mat-toolbar style="height: 64px;" *ngIf="role === 'admin'">
+<p>
+  <mat-toolbar style="height: 64px; background-color: lightgray;" *ngIf="role === 'admin'">
     <button mat-icon-button [matMenuTriggerFor]="menu_tecnico" class="example-icon" aria-label="Example icon-button with a menu">
       <mat-icon>menu</mat-icon>
     </button>
