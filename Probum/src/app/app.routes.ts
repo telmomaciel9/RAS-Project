@@ -4,6 +4,8 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { PerfilComponent } from './Utilizador/perfil/perfil.component';
 import { EditarPerfilComponent } from './Utilizador/editar-perfil/editar-perfil.component';
+import { ConsultarProvasComponent } from './Provas/consultar-provas/consultar-provas.component';
+import { ConsultarProvaComponent } from './Provas/consultar-prova/consultar-prova.component';
 
 
 export const routes: Routes = [
@@ -12,4 +14,8 @@ export const routes: Routes = [
   { path: 'home', component: InicioComponent },
   { path: 'perfil', component: PerfilComponent },
   { path: 'editar', component: EditarPerfilComponent },
+  { path: 'consultar-provas', component: ConsultarProvasComponent },
+  { path: 'consultar-prova', component: ConsultarProvaComponent },
+
+
 ];
