@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { ProvasService } from './criarprova.service';
-
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-prova',
-  templateUrl: './criarprova.component.html'
+  templateUrl: './criarprova.component.html',
+  providers: [ProvasService],
 })
 export class ProvaComponent {
   unidadesCurriculares: string[] = [];
@@ -18,6 +20,7 @@ export class ProvaComponent {
   getUnidadesCurriculares(): void {
     this.provasService.getUnidadesCurriculares().subscribe((ucs: string[]) => {
       this.unidadesCurriculares = ucs;
+      console.log('UCs:', this.unidadesCurriculares);
     });
   }
 

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-consultar-prova',
@@ -10,5 +11,5 @@ import { Component } from '@angular/core';
 export class ConsultarProvaComponent {
 
   // falta isto
-  prova = null
+  prova: any = {}; 
 }

@@ -6,7 +6,7 @@ import { Observable, map } from 'rxjs';
   providedIn: 'root'
 })
 export class ProvasService {
-  private apiUrl = 'http://localhost:5001/'; 
+  private apiUrl = 'http://localhost:5001'; 
 
   constructor(private http: HttpClient) { }
 

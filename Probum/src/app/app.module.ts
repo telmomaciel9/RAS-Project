@@ -12,6 +12,7 @@ import { ProvaComponent } from './criarprova/criarprova.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import {ChangePasswordDialogComponent} from './change-password-dialog/change-password-dialog.component';
 import { routes } from './app.routes';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { routes } from './app.routes';
     BsDatepickerModule.forRoot(),
     TimepickerModule.forRoot(),
     HttpClientModule,
+    CommonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
