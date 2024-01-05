@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
 })
 export class ConsultarProvaService {
 
-  private apiUrl = 'http://localhost:5001/Probum/api';
+  private apiUrl = 'http://127.0.0.1:5001/Probum/api';
 
   constructor(private http: HttpClient) {}
 

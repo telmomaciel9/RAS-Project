@@ -42,6 +42,16 @@ export class AppComponent {
     this.router.navigate(['/perfil']);
   }
 
+  home(): void {
+    // Redireciona para a rota '/perfil'
+    this.router.navigate(['/home']);
+  }
+
+  registar(): void {
+    // Redireciona para a rota '/perfil'
+    this.router.navigate(['/register']);
+  }
+
   getUserInfo(): void {
     this.appService.getUserInfo().subscribe(
       (response) => {
