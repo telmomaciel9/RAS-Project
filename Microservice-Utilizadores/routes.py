@@ -57,7 +57,7 @@ def change_password():
 @decorators.login_required
 def get_user_info():
     try:
-        return jsonify({'username': g.username, 'email': g.email, 'role': g.role}), 200
+        return jsonify({ 'username': g.username, 'email': g.email, 'role': g.role}), 200
 
     except Exception as e:
         return jsonify({'error': str(e)}), 500
