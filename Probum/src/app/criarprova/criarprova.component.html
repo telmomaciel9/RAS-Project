@@ -8,6 +8,17 @@
     <label for="dataHoraProva">Data e Hora da Prova:</label>
     <input type="datetime-local" id="dataHoraProva" (input)="onDateTimeChange($event)">
   </div>
-  
+ 
   <button (click)="criarProva()">Criar Prova</button>
+  
+  <div [style.display]="exibirCriarQuestao ? 'block' : 'none'">
+    <button (click)="exibirOpcoesQuestao()">Criar Questão</button>
+    <div [style.display]="exibirOpcoes ? 'block' : 'none'">
+      <label for="tipoQuestao">Tipo de Questão:</label>
+      <select id="tipoQuestao" (change)="onTipoQuestaoChange($event)">
+        <option value="escolhaMultipla">Escolha Múltipla</option>
+        <option value="aberta">Aberta</option>
+      </select>
+    </div>
+  </div>
 </div>
