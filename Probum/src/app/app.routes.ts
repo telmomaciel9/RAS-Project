@@ -3,7 +3,7 @@ import { ProvaComponent } from './criarprova/criarprova.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { PerfilComponent } from './Utilizador/perfil/perfil.component';
-
+import { RegisterComponent } from './register/register.component';
 import { ConsultarProvasComponent } from './Provas/consultar-provas/consultar-provas.component';
 import { ConsultarProvaComponent } from './Provas/consultar-prova/consultar-prova.component';
 
@@ -14,7 +14,7 @@ export const routes: Routes = [
   { path: 'criarprova', component: ProvaComponent },
   { path: 'home', component: InicioComponent },
   { path: 'perfil', component: PerfilComponent },
-
+  { path: 'register', component: RegisterComponent },
 
   { path: 'consultar-provas', component: ConsultarProvasComponent },
   { path: 'consultar-prova', component: ConsultarProvaComponent },

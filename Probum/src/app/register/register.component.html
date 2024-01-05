@@ -1,0 +1,40 @@
+<div class="backgroundGoat">
+    <div class="centered-div">
+        <mat-card fxFlex="30" class="login-form">
+          <img src="assets/ProbumLogoTemp.svg" alt="erro">
+          <br>
+      
+          <form fxLayoutAlign="stretch" fxLayout="column">
+            <!-- ngSubmit é usado para chamar o método login() quando o formulário for submetido -->
+      
+            <mat-form-field>
+              <mat-label style="margin-bottom: 8px;">Username</mat-label>
+              <input matInput name="username" required>
+              <!-- O uso de ngModel e name é importante para a vinculação de dados do formulário -->
+            </mat-form-field>
+      
+            <mat-form-field>
+              <mat-label style="margin-bottom: 8px;">Enter your password</mat-label>
+              <input matInput name="password"  required>
+              <!-- O uso de ngModel e name é importante para a vinculação de dados do formulário -->
+              <button type="button" mat-icon-button matSuffix >
+                olho
+              </button>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label style="margin-bottom: 8px;">Confirm password</mat-label>
+                <input matInput name="password"  required>
+                <!-- O uso de ngModel e name é importante para a vinculação de dados do formulário -->
+                <button type="button" mat-icon-button matSuffix >
+                  olho
+                </button>
+            </mat-form-field>
+      
+            <button mat-raised-button type="submit">Register</button>
+      
+            <br>
+          </form>
+        </mat-card>
+      </div>
+</div>
