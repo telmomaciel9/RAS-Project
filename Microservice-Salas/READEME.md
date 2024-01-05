@@ -51,5 +51,5 @@ python3 salas-microservice.py
 ### 9º Link da documentação da API
 
 ```
-https://documenter.getpostman.com/view/20678947/2s9YsFDZE4
+https://documenter.getpostman.com/view/20678947/2s9YsGjZQ3
 ``` 
