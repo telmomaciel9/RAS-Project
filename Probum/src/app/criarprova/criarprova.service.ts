@@ -1,14 +1,16 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class ProvasService {
-  private apiUrl = 'http://localhost:5001'; 
+@Injectable()
 
-  constructor(private http: HttpClient) { }
+  
+export class ProvasService {
+  private apiUrl = 'http://localhost:5001/Probum/api'; 
+  constructor(private http: HttpClient) {
+	}
+
+
 
   getUnidadesCurriculares(): Observable<string[]> {
     return this.http.get<any[]>(`${this.apiUrl}/provas`).pipe(

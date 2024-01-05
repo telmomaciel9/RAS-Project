@@ -1,12 +1,13 @@
 <div>
-    <h2>Criação de Prova</h2>
-    <div>
-      <label for="selectedProva">Nome da Prova:</label>
-      <select  (change)="onSelectProva($event)">
-        <option *ngFor="let prova of unidadesCurriculares" [value]="prova">{{ prova }}</option>
-      </select>
-    </div>
-  
-    <button (click)="criarProva()">Criar Prova</button>
+  <h2>Criação de Prova</h2>
+  <div>
+    <label for="nomeProva">Nome da Prova:</label>
+    <input type="text" id="nomeProva" (input)="onNomeChange($event)">
+  </div>
+  <div>
+    <label for="dataHoraProva">Data e Hora da Prova:</label>
+    <input type="datetime-local" id="dataHoraProva" (input)="onDateTimeChange($event)">
   </div>
   
+  <button (click)="criarProva()">Criar Prova</button>
+</div>

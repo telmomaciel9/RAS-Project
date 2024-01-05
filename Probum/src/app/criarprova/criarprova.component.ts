@@ -8,28 +8,22 @@ import { CommonModule } from '@angular/common';
   providers: [ProvasService],
 })
 export class ProvaComponent {
-  unidadesCurriculares: string[] = [];
-  selectedProva: string = ''; // Variável para armazenar a prova selecionada
+  nomeProva: string = ''; // Variável para armazenar o nome da prova
+  dataHoraProva: string = ''; // Variável para armazenar a data e hora da prova
 
-  constructor(private provasService: ProvasService) { }
-
-  ngOnInit(): void {
-    this.getUnidadesCurriculares();
+  onNomeChange(event: Event): void {
+    const inputElement = event.target as HTMLInputElement;
+    this.nomeProva = inputElement.value; // Armazena o valor do input de nome da prova
   }
 
-  getUnidadesCurriculares(): void {
-    this.provasService.getUnidadesCurriculares().subscribe((ucs: string[]) => {
-      this.unidadesCurriculares = ucs;
-      console.log('UCs:', this.unidadesCurriculares);
-    });
-  }
-
-  onSelectProva(event: Event): void {
-    const target = event.target as HTMLSelectElement;
-    this.selectedProva = target.value;
+  onDateTimeChange(event: Event): void {
+    const inputElement = event.target as HTMLInputElement;
+    this.dataHoraProva = inputElement.value; // Armazena o valor do input de data e hora da prova
   }
 
   criarProva(): void {
-    // Lógica para criar a prova com this.selectedProva
+    // Aqui você pode usar this.nomeProva e this.dataHoraProva para criar a prova
+    console.log('Nome da prova:', this.nomeProva);
+    console.log('Data e Hora da prova:', this.dataHoraProva);
   }
 }
