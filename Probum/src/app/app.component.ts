@@ -62,6 +62,12 @@ export class AppComponent {
     this.router.navigate(['/salas']);
   }
 
+  criarProva(): void {
+    // Redireciona para a rota '/perfil'
+    this.router.navigate(['/criarprova']);
+  }
+
+
   getUserInfo(): void {
     this.appService.getUserInfo().subscribe(
       (response) => {
