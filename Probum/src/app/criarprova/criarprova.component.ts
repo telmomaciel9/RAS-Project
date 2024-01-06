@@ -14,6 +14,8 @@ export class ProvaComponent {
   exibirOpcoes: boolean = false;
   tipoQuestaoSelecionada: string = '';
 
+  
+
   onNomeChange(event: Event): void {
     const inputElement = event.target as HTMLInputElement;
     this.nomeProva = inputElement.value; // Armazena o valor do input de nome da prova
@@ -36,5 +38,16 @@ export class ProvaComponent {
   onTipoQuestaoChange(event: Event): void {
     const selectElement = event.target as HTMLSelectElement;
     this.tipoQuestaoSelecionada = selectElement.value; // Armazena o tipo de questão selecionada
+  }
+  guardarProva(): void {
+    // Aqui você pode adicionar a lógica para salvar os dados inseridos
+    console.log('Nome da prova:', this.nomeProva);
+    console.log('Data e Hora da prova:', this.dataHoraProva);
+    console.log('Tipo de questão selecionada:', this.tipoQuestaoSelecionada);
+
+  }
+  criarQuestao(): void {
+    // Adicione aqui a lógica para criar a questão
+    console.log('Criar questão:', this.tipoQuestaoSelecionada);
   }
 }
