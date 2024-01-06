@@ -5,6 +5,7 @@ from flask_migrate import Migrate
 import pandas as pd
 from datetime import datetime, timedelta
 from sqlalchemy import func,and_
+from flask_cors import CORS
 
 
 # Apenas para DEBUG enquanto não temos o microserviço de contas
@@ -15,6 +16,7 @@ dict_id = {'joao': 1, 'maria': 2, 'pedro': 3}  # dicionario de contas
 # CONTAS_MICROSERVICE_URL = 'http://localhost:5000' # ver a porta do microservico de contas
 
 app = Flask(__name__)
+CORS(app, resources={r"/*": {"origins": "*"}})
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://probum:password@localhost/Provasdb'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_CHARSET'] = 'utf8mb4'

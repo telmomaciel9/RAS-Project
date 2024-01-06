@@ -24,14 +24,15 @@
           <mat-icon>preview</mat-icon>
           <span>Provas</span>
         </button>
-        <button mat-menu-item>
+        <button mat-menu-item (click)="classificacoes()">
           <mat-icon>star</mat-icon>
           <span>Classificações</span>
         </button>
       </mat-menu>
 
       <span class="example-spacer"></span>
-      <span>Probum-Docente</span>
+      <span>Docente</span>
+      <span style="display: block; text-align: center; width: 100%; cursor: pointer;" (click)="home()">Probum</span>
       <span class="example-spacer"></span>
       
       <button mat-icon-button class="example-icon custom-button" aria-label="Example icon-button with share icon" (click)="logout()">
@@ -61,7 +62,7 @@
         <mat-icon>preview</mat-icon>
         <span>Provas</span>
       </button>
-      <button mat-menu-item>
+      <button mat-menu-item (click)="classificacoes()">
         <mat-icon>star</mat-icon>
         <span>Classificações</span>
       </button>
@@ -70,7 +71,8 @@
 
 
     <span class="example-spacer"></span>
-    <span>Probum-Aluno</span>
+    <span>Aluno</span>
+    <span style="display: block; text-align: center; width: 100%; cursor: pointer;" (click)="home()">Probum</span>
     <span class="example-spacer"></span>
     <button mat-icon-button class="example-icon custom-button" aria-label="Example icon-button with share icon" (click)="logout()">
       Logout
@@ -97,24 +99,17 @@
         <mat-icon>how_to_reg</mat-icon>
         <span>Registar Utilizador</span>
       </button>
-      <button mat-menu-item>
-        <mat-icon>add_circle</mat-icon>
-        <span>Criar Prova</span>
+      <button mat-menu-item (click)="salas()">
+        <mat-icon>dns</mat-icon>
+        <span>Gerir salas</span>
       </button>
-      <button mat-menu-item>
-        <mat-icon>preview</mat-icon>
-        <span>Provas</span>
-      </button>
-      <button mat-menu-item>
-        <mat-icon>star</mat-icon>
-        <span>Classificações</span>
-      </button>
+
       
     </mat-menu>
 
     <span class="example-spacer"></span>
     <span>Tecnico</span>
-    <span style="text-align: center; display: block; width: 100%;">Probum</span>
+    <span style="display: block; text-align: center; width: 100%; cursor: pointer;" (click)="home()">Probum</span>
     <span class="example-spacer"></span>
     <button mat-icon-button class="example-icon custom-button" aria-label="Example icon-button with share icon" (click)="logout()">
       Logout

@@ -52,6 +52,16 @@ export class AppComponent {
     this.router.navigate(['/register']);
   }
 
+  classificacoes(): void {
+    // Redireciona para a rota '/perfil'
+    this.router.navigate(['/classificacoes']);
+  }
+
+  salas(): void {
+    // Redireciona para a rota '/perfil'
+    this.router.navigate(['/salas']);
+  }
+
   getUserInfo(): void {
     this.appService.getUserInfo().subscribe(
       (response) => {

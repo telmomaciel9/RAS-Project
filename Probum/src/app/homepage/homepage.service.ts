@@ -20,7 +20,7 @@ export class AuthService {
 
   login(username: string, password: string) {
     const body = { username, password };
-    return this.http.post<any>(`${this.baseUrl}/login`, body).pipe(
+    return this.http.post<any>(`${this.baseUrl}/login`, body, { headers: this.headers }).pipe(
       catchError((error) => {
         console.error('Error occurred during login:', error);
         return throwError(error);
